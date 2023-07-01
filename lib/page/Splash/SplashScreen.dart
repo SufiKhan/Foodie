@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:workspace/Utils/AppColors.dart';
 import 'package:workspace/Utils/Dimensions.dart';
+import 'package:workspace/Widgets/big_text.dart';
 import 'package:workspace/controllers/PopularProductController.dart';
 import 'package:workspace/controllers/RecommendedFoodController.dart';
 import 'package:workspace/helper/RouteHelper.dart';
@@ -29,9 +31,9 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
     super.initState();
     _loadResource();
     controller = AnimationController(vsync: this, duration: const Duration(seconds: 2))..forward();
-    animation = CurvedAnimation(parent: controller, curve: Curves.bounceOut);
+    animation = CurvedAnimation(parent: controller, curve: Curves.bounceInOut);
     Timer(
-      const Duration(seconds: 2),
+      const Duration(seconds: 3),
         ()=> Get.offNamed(RouteHelper.getInitial(0))
     );
   }
@@ -49,15 +51,17 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ScaleTransition(scale: animation,
-            child: Center(
-                child: Image.asset("assets/image/logo1.png",
-                  width: Dimensions.splashImageHeight,
+            child: Column(
+              children: [
+                Center(
+                    child: Image.asset("assets/image/foodie.png",
+                      width: Dimensions.splashImageHeight,
+                    )
+                ),Center(
+                    child: BigText(text: "Only stop for best foods", color: AppColors.yellowColor, size: Dimensions.font26,)
                 )
-            ),),
-          Center(
-              child: Image.asset("assets/image/logo2.png",
-                width: Dimensions.splashImageHeight,)
-          )
+              ],
+            )),
         ],
       ),
     );
