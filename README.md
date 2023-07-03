@@ -1,16 +1,26 @@
-# workspace
+# A Flutter skill demonstration project.
 
-A new Flutter project.
+## Major features
 
-## Getting Started
+1. Show products based on category
+2. Shopping cart
+3. Place your order
+4. Track order
+5. User profile
+6. Sign in & Sign up
+7. User address location from Google Map
+8. Zone based order
+9. User Authentication
+10. Firebase notification
+11. Payment (Paypal)
+12. Create new products on the backend
+13. See order details
+14. Update order status
 
-This project is a starting point for a Flutter application.
+## About the code
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. A reactive approach using GetX library for State, dependency and route management.
+2. Build separate UI Components.
+3. Animations
+4. Rest API's
+5. Local cache
