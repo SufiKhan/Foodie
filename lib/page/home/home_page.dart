@@ -5,7 +5,6 @@ import 'package:workspace/Widgets/big_text.dart';
 import 'package:workspace/Widgets/small_text.dart';
 import 'package:workspace/controllers/PopularProductController.dart';
 import 'package:workspace/controllers/RecommendedFoodController.dart';
-import '../../Factory/FoodFactory.dart';
 import '../../Utils/AppColors.dart';
 import '../../Utils/AppConstants.dart';
 import '../../Widgets/icon_text_widget.dart';
@@ -25,10 +24,7 @@ class _HomePagePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // PopularProductController popularProductController = FoodFactoryImpl().getPopularFoodController();
-    // RecommendedFoodController recommendedFoodController = FoodFactoryImpl().getRecommendedFoodController();
-    // popularProductController.getPopularProductList();
-    // recommendedFoodController.getRecommendedFoodList();
+
     return Scaffold(
       body:
       Column(

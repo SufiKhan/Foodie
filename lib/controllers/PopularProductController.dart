@@ -6,10 +6,10 @@ import '../models/PopularProduct.dart';
 import '../models/Recommended.dart';
 import 'CartController.dart';
 
-class PopularProductController extends GetxController {
+class ProductController extends GetxController {
     final PopularProductRepo popularProductRepo;
 
-    PopularProductController({required this.popularProductRepo });
+    ProductController({required this.popularProductRepo });
     List<dynamic> _popularProductList = [];
     List<dynamic> get popularProductList => _popularProductList;
     List<dynamic> _recommendedFoodList = [];

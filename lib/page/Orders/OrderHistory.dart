@@ -62,44 +62,6 @@ class OrderHistory extends StatelessWidget {
         ),
       );
     });
-    return Scaffold(
-      body: Stack(
-        children: [
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            height: Dimensions.height20*5,
-            child: Center(
-              child: Container(
-                margin: EdgeInsets.only(top: Dimensions.height20),
-                child: BigText(text: "Orders",
-                  color: AppColors.mainColor,
-                size: 30,),
-              ),
-            )
-          ),
-          Positioned(
-              top: Dimensions.height20 * 5,// because we need to set it below the nav buttons
-              left: Dimensions.width20,
-              right: Dimensions.width20,
-              bottom: 0,
-              child: Container(
-                child: MediaQuery.removePadding(
-                    context: context,
-                    removeTop: true,
-                    child: GetBuilder<CartController>(builder: (controller) {
-                      return ListView.builder(
-                          itemCount: controller.historyList.length,
-                          itemBuilder: (_, index) {
-                            return _buildCartList(index, controller.historyList[index], controller);
-                          });
-                    })
-                ),
-              ))
-        ],
-      ),
-    );
   }
 
   Widget _buildCartList(int index, CartItem model, CartController controller) {

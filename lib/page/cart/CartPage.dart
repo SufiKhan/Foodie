@@ -37,7 +37,7 @@ class CartPage extends StatelessWidget {
                 top: 0,
                 left: 0,
                 right: 0,
-                height: Dimensions.height20*4,
+                height: Dimensions.height20*5,
                 child: Center(
                   child: Container(
                     margin: EdgeInsets.only(top: Dimensions.height20),
@@ -48,7 +48,7 @@ class CartPage extends StatelessWidget {
                 )
             ),
             Positioned(
-                top: Dimensions.height20 * 6,// because we need to set it below the nav buttons
+                top: Dimensions.height20 * 5,// because we need to set it below the nav buttons
                 left: Dimensions.width20,
                 right: Dimensions.width20,
                 bottom: 0,

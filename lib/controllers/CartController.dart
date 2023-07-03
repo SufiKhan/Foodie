@@ -93,7 +93,7 @@ class CartController extends GetxController {
     } else if (quantity > 20) {
       return;
     } else {
-      _updateCartItemQuantity(item, quantity);
+      updateCart(item, quantity, item.itemIndexInList!);
     }
   }
 
