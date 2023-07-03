@@ -1,7 +1,6 @@
-# A Flutter skill demonstration project.
+# Flutter sample project with a lot of potential.
 
 ![demo3](https://github.com/SufiKhan/Foodie/assets/13538306/c35b37af-3c74-4409-9878-8d7a812d3e64)
-
 
 ## Major features
 
