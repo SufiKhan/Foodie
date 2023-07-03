@@ -7,7 +7,6 @@ import 'package:workspace/page/Tabbar/TabbarPage.dart';
 import 'package:workspace/page/cart/CartPage.dart';
 import 'package:workspace/page/food/RecommendedFoodDetailPage.dart';
 import '../models/CartModel.dart';
-import '../page/food/PopularFoodDetailPage.dart';
 
 class RouteHelper {
   static const String splashScreen="/";

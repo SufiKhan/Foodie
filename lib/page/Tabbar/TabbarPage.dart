@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:workspace/Utils/AppColors.dart';
 import 'package:workspace/page/Orders/OrderHistory.dart';
+import 'package:workspace/page/Profile/ProfilePage.dart';
 import 'package:workspace/page/cart/CartPage.dart';
 import 'package:workspace/page/home/home_page.dart';
 
@@ -13,7 +14,7 @@ class TabbarPage extends StatelessWidget {
     HomePage(),
     const OrderHistory(),
     const CartPage(),
-    Container(child: Center(child: Text("Next 2page")))
+    const ProfilePage()
   ];
 
   @override

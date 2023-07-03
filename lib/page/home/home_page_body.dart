@@ -2,18 +2,15 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:workspace/Factory/FoodFactory.dart';
 import 'package:workspace/Utils/AppColors.dart';
 import 'package:workspace/Utils/Dimensions.dart';
 import 'package:workspace/Widgets/app_column.dart';
 import 'package:workspace/Widgets/big_text.dart';
 import 'package:workspace/Widgets/icon_text_widget.dart';
 import 'package:workspace/Widgets/small_text.dart';
-import 'package:workspace/controllers/RecommendedFoodController.dart';
 import 'package:workspace/helper/RouteHelper.dart';
 import 'package:workspace/models/PopularProduct.dart';
 import 'package:workspace/models/Recommended.dart';
-import 'package:workspace/page/food/PopularFoodDetailPage.dart';
 
 import '../../Utils/AppConstants.dart';
 import '../../controllers/PopularProductController.dart';
@@ -56,7 +53,7 @@ class _HomePageBodyState extends State<HomePageBody> {
         return  Column(
         children: [
           // Slider section
-          GetBuilder<PopularProductController>(builder: (popularProductController){
+          GetBuilder<ProductController>(builder: (popularProductController){
             return popularProductController.isLoaded? Container(
               height: Dimensions.pageView,
               child: PageView.builder(
@@ -71,7 +68,7 @@ class _HomePageBodyState extends State<HomePageBody> {
             ): Container();
           }),
           // dots
-          GetBuilder<PopularProductController>(builder: (popularProductController){
+          GetBuilder<ProductController>(builder: (popularProductController){
               return DotsIndicator(
                   dotsCount: popularProductController.popularProductList.isEmpty?1:popularProductController.popularProductList.length ,
                   position: currPageValue,
@@ -106,7 +103,7 @@ class _HomePageBodyState extends State<HomePageBody> {
             ),
           ),
           // bottom list of popular restaurants
-          GetBuilder<PopularProductController>(builder: (controller) {
+          GetBuilder<ProductController>(builder: (controller) {
             return ListView.builder(
                 physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,

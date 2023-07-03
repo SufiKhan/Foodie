@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 
 class AppColors {
 
-  static const Color mainColor3 = Color(0xFF162194);
+  static const Color mainColor3 = Color(0xFF184dde);
   static const Color mainColor2 = Color(0xFFae34eb);
   static const Color mainColor = Color(0xFF9a10b5);
   static const Color textColor = Color(0xFFccc7c5);

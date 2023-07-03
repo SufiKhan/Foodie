@@ -22,8 +22,8 @@ class RecommendedFoodDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    PopularProductController controller =
-        Get.find<PopularProductController>();
+    ProductController controller =
+        Get.find<ProductController>();
     if (itemType == ItemType.popular) {
       CartItem model = controller.popularProductList[index];
       controller.init(Get.find<CartController>(), model.id!);
@@ -33,7 +33,7 @@ class RecommendedFoodDetailPage extends StatelessWidget {
     }
     return Scaffold(
       backgroundColor: Colors.white,
-      body: GetBuilder<PopularProductController>(builder: (controller) {
+      body: GetBuilder<ProductController>(builder: (controller) {
         CartItem model;
         switch (itemType) {
           case ItemType.popular: model = controller.popularProductList[index];
@@ -43,7 +43,8 @@ class RecommendedFoodDetailPage extends StatelessWidget {
           slivers: [
             SliverAppBar(
               automaticallyImplyLeading: false,
-              toolbarHeight: Dimensions.detailPageSliverBarHeight,
+              toolbarHeight: Dimensions.height45 + Dimensions.height15,
+              collapsedHeight: Dimensions.detailPageSliverBarHeight + Dimensions.height45,
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -72,10 +73,11 @@ class RecommendedFoodDetailPage extends StatelessWidget {
                                 color: Colors.white,
                               ),
                               child: const Card(
-                                  child: Padding(
-                                padding: EdgeInsets.all(10),
-                                child: Icon(Icons.shopping_cart_outlined),
-                              ))),
+                                  child: AppIcon(
+                                    icon: Icons.shopping_cart_outlined,
+                                    backgroundColor: Colors.white,
+                                    iconColor: AppColors.mainColor2,
+                                  ))),
                         )
                       : const AppIcon(
                           icon: Icons.shopping_cart_outlined,
@@ -104,7 +106,7 @@ class RecommendedFoodDetailPage extends StatelessWidget {
                   ),
                 ),
               ),
-              expandedHeight: 300,
+              expandedHeight: Dimensions.height30*10,
               pinned: true,
               backgroundColor: AppColors.mainColor,
               flexibleSpace: FlexibleSpaceBar(
@@ -129,7 +131,7 @@ class RecommendedFoodDetailPage extends StatelessWidget {
           ],
         );
       }),
-      bottomNavigationBar: GetBuilder<PopularProductController>(builder: (controller) {
+      bottomNavigationBar: GetBuilder<ProductController>(builder: (controller) {
         CartItem model;
         switch (itemType) {
           case ItemType.popular: model = controller.popularProductList[index];

@@ -21,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
   late AnimationController controller;
 
   Future<void> _loadResource() async {
-    PopularProductController controller = Get.find<PopularProductController>();
+    ProductController controller = Get.find<ProductController>();
     await controller.getPopularProductList();
     await controller.getRecommendedFoodList();
   }
@@ -31,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
     super.initState();
     _loadResource();
     controller = AnimationController(vsync: this, duration: const Duration(seconds: 2))..forward();
-    animation = CurvedAnimation(parent: controller, curve: Curves.bounceInOut);
+    animation = CurvedAnimation(parent: controller, curve: Curves.linearToEaseOut);
     Timer(
       const Duration(seconds: 3),
         ()=> Get.offNamed(RouteHelper.getInitial(0))

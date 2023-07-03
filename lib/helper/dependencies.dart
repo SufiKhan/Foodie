@@ -17,7 +17,7 @@ Future<void> init() async {
   Get.lazyPut(() => ApiClient(appBaseUrl:AppConstants.BASE_URL));
 
   // Get.lazyPut(() => PopularProductController(popularProductRepo: PopularProductRepo(apiClient: Get.find())));
-  Get.put(PopularProductController(popularProductRepo: PopularProductRepo(apiClient: Get.find())), permanent: true);
+  Get.put(ProductController(popularProductRepo: PopularProductRepo(apiClient: Get.find())), permanent: true);
   Get.put(RecommendedFoodController(recommendedFoodRepo: RecommendedFoodRepo(apiClient: Get.find())), permanent: true);
   // Get.lazyPut(() => RecommendedFoodController(recommendedFoodRepo: RecommendedFoodRepo(apiClient: Get.find())));
 
