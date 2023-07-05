@@ -1,4 +1,4 @@
-A Demoable flutter project for skills.
+#A Demoable flutter project for skills.
 
 ![final_foodie](https://github.com/SufiKhan/Foodie/assets/13538306/042aa574-1d36-42b1-a68f-ff59ab90f97c)
 
