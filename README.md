@@ -1,6 +1,6 @@
-![image](https://github.com/SufiKhan/Foodie/assets/13538306/bc5c722a-1e8a-47b2-b41c-eb8967428d4b)# Flutter sample project with a lot of potential.
+Flutter sample project with a lot of potential.
 
-![Uploading final_foodie.gif…]()
+![final_foodie](https://github.com/SufiKhan/Foodie/assets/13538306/042aa574-1d36-42b1-a68f-ff59ab90f97c)
 
 ## Major features
 
