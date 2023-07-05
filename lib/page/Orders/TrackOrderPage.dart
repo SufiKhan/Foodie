@@ -19,26 +19,15 @@ class TrackOrderPage extends StatelessWidget {
     final CartItem item = Get.arguments;
     DateFormat format = DateFormat("yyyy-MM-dd hh:mm");
     DateTime modelDate = format.parse(item.time!);
-    modelDate.add(const Duration(minutes: 30));
-    final estTime = format.format(modelDate);
+    final estTime = format.format(modelDate.add(Duration(minutes: 30)));
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: AppColors.mainColor,
+      ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.only(top: Dimensions.height45, left: Dimensions.width10, right: Dimensions.width10),
+        padding: EdgeInsets.only(left: Dimensions.width10, right: Dimensions.width10),
           child: Column(
             children: [
-              Row(
-                children:[
-                  Padding(padding: EdgeInsets.only(left: Dimensions.width20)),
-                  GestureDetector(
-                    onTap: () {
-                      Get.back();
-                    },
-                    child: const AppIcon(icon: Icons.close_sharp,
-                      backgroundColor: AppColors.titleColor,
-                      iconColor: Colors.white,) ,
-                  )
-                ] ,
-              ),
               Container(
                   height: Dimensions.height45*6,
                   decoration: BoxDecoration(
@@ -47,11 +36,6 @@ class TrackOrderPage extends StatelessWidget {
                     ),fit: BoxFit.cover
                     )
                   ),
-              ),
-              Container(
-                height: 1,
-                width: Dimensions.screenWidth,
-                color: AppColors.mainColor,
               ),
               SizedBox(height: Dimensions.height20,),
               BigText(text: "Delivery time is $estTime",

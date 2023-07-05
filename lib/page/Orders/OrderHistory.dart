@@ -97,7 +97,7 @@ class OrderHistory extends StatelessWidget {
                       SmallText(text: "\$ ${model.price!} x ${model.quantity}",
                         color: Colors.brown,
                         size: 16,),
-                      difference<60? GestureDetector(
+                      difference < 30? GestureDetector(
                         onTap: () {
                           Get.toNamed(RouteHelper.getTrackOrderPage(), arguments: model);
                         },
