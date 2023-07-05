@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
+import 'package:intl/intl.dart';
 
 import '../../Utils/AppColors.dart';
 import '../../Utils/AppConstants.dart';
@@ -12,7 +13,8 @@ import '../../controllers/CartController.dart';
 import '../../models/CartModel.dart';
 
 class OrderHistory extends StatelessWidget {
-  const OrderHistory({Key? key}) : super(key: key);
+   OrderHistory({Key? key}) : super(key: key);
+  final DateFormat formatter = DateFormat('yyyy-MM-dd hh:mm');
 
   @override
   Widget build(BuildContext context) {
@@ -65,6 +67,8 @@ class OrderHistory extends StatelessWidget {
   }
 
   Widget _buildCartList(int index, CartItem model, CartController controller) {
+    DateTime modelDate = formatter.parse(model.time!);
+    final difference = DateTime.now().difference(modelDate).inMinutes;
     return SizedBox(
         height: 100,
         width: double.maxFinite,
@@ -89,13 +93,33 @@ class OrderHistory extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   BigText(text: model.name!),
-                  SmallText(text: "\$ ${model.price!} x ${model.quantity}",
-                      color: Colors.brown,
-                  size: 16,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SmallText(text: "${model.time!.substring(0, 16)}",
+                      SmallText(text: "\$ ${model.price!} x ${model.quantity}",
+                        color: Colors.brown,
+                        size: 16,),
+                      difference<30? Container(
+                        width: Dimensions.width45 * 6,
+                        height: Dimensions.width45,
+                        decoration: BoxDecoration(
+                          gradient: AppColors.gradient,
+                          borderRadius: BorderRadius.circular(Dimensions.radius20)
+                        ),
+                        child: Center(
+                          child: SmallText(text: "Track pending order",
+                          color: Colors.white,),
+                        ),
+                      ):Container(
+                        child: SmallText(text: "Order completed",
+                          color: AppColors.signColor,),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SmallText(text: formatter.format(modelDate),
                           color: AppColors.titleColor),
                       BigText(text: "\$ ${model.price! * model.quantity!}", color: AppColors.mainBlackColor,),
                     ],

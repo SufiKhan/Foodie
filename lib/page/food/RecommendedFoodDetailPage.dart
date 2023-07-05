@@ -59,7 +59,6 @@ class RecommendedFoodDetailPage extends StatelessWidget {
                   controller.getTotalItem(model.id!) > 0
                       ? GestureDetector(
                           onTap: () {
-                            // tabbarController.changeTab(2);
                             Get.toNamed(RouteHelper.getInitial(2));
                           },
                           child: Badge(

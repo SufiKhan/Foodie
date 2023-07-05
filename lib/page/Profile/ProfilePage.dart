@@ -49,7 +49,7 @@ class ProfilePage extends StatelessWidget {
                     needBiggerTextSize: true,),
                   SizedBox(height: Dimensions.height30,),
                   const IconTextWidget(icon: Icons.location_pin,
-                    text: "Fill in your address",
+                    text: "705, Anime building, 7 Border St, Tst",
                     iconColor: AppColors.mainColor3,
                     needBiggerIconSize: true,
                     needBiggerTextSize: true,),

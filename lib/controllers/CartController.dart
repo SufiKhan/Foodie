@@ -118,11 +118,6 @@ class CartController extends GetxController {
     update();
   }
 
-  // Future<List<CartModel>> getHistory() async {
-  //   List<CartModel> hist = await cartRepo.getCartHistoryList();
-  //   return hist;
-  // }
-
   set setOrderHistory(List<CartModel> items) {
     _orderHistory = [];
     _orderHistory = items;
