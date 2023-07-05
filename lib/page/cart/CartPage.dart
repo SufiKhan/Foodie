@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:workspace/Utils/AppColors.dart';
+import 'package:workspace/Widgets/FRadioTile.dart';
 import 'package:workspace/Widgets/app_icon.dart';
 import 'package:workspace/Widgets/big_text.dart';
 import 'package:workspace/Widgets/small_text.dart';
@@ -14,6 +15,9 @@ import 'package:workspace/page/food/RecommendedFoodDetailPage.dart';
 
 import '../../Utils/AppConstants.dart';
 import '../../Utils/Dimensions.dart';
+import 'CartConfirmationPage.dart';
+
+typedef OrderConfirmedCallBack = void Function();
 
 class CartPage extends StatelessWidget {
   const CartPage({Key? key}) : super(key: key);
@@ -102,7 +106,12 @@ class CartPage extends StatelessWidget {
             GestureDetector(
               onTap: () {
                 if (controller.items.isNotEmpty) {
-                  controller.checkOut();
+                  showModalBottomSheet(context: context, builder: (BuildContext ctx) {
+                      return CartConfirmationPage(callBack:() {
+                          controller.checkOut();
+                          Get.toNamed(RouteHelper.getInitial(1));
+                      });
+                  });
                 }
               },
               child: Container(
@@ -170,6 +179,7 @@ class CartPage extends StatelessWidget {
                               SizedBox(width: Dimensions.width10/2,),
                               GestureDetector(
                                 onTap:() {
+
                                   controller.updateCartPageList(model, model.quantity!+1);
                                 },
                                 child: Icon(Icons.add, color: Colors.green,),
@@ -186,3 +196,4 @@ class CartPage extends StatelessWidget {
         ));
   }
 }
+

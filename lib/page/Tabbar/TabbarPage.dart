@@ -12,7 +12,7 @@ class TabbarPage extends StatelessWidget {
 
   List<Widget> pages = [
     HomePage(),
-    const OrderHistory(),
+    OrderHistory(),
     const CartPage(),
     const ProfilePage()
   ];

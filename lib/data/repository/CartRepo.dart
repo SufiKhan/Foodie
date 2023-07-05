@@ -61,7 +61,7 @@ class CartRepo extends GetxService {
     for (var element in _cartHistory) {
       historyList.add(CartModel.fromJson(jsonDecode(element)));
     }
-    return historyList;
+    return historyList.reversed.toList();
   }
 
 }
