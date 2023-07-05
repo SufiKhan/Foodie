@@ -19,4 +19,5 @@ Flutter sample project with a lot of potential.
 3. Animations
 4. Rest API's
 5. Local cache
+6. Tabs
 
