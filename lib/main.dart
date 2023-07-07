@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:workspace/controllers/PopularProductController.dart';
-import 'package:workspace/controllers/RecommendedFoodController.dart';
 import 'package:workspace/helper/RouteHelper.dart';
-import 'package:workspace/page/Splash/SplashScreen.dart';
-import 'package:workspace/page/Tabbar/TabbarPage.dart';
-import 'package:workspace/page/home/home_page.dart';
 import 'package:workspace/helper/dependencies.dart' as dependencies;
 
 Future<void> main() async {

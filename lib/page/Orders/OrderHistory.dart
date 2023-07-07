@@ -1,12 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/src/simple/get_state.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-
+import 'package:workspace/helper/RouteHelper.dart';
 import '../../Utils/AppColors.dart';
 import '../../Utils/AppConstants.dart';
 import '../../Utils/Dimensions.dart';
-import '../../Widgets/app_icon.dart';
 import '../../Widgets/big_text.dart';
 import '../../Widgets/small_text.dart';
 import '../../controllers/CartController.dart';
@@ -99,16 +97,21 @@ class OrderHistory extends StatelessWidget {
                       SmallText(text: "\$ ${model.price!} x ${model.quantity}",
                         color: Colors.brown,
                         size: 16,),
-                      difference<30? Container(
-                        width: Dimensions.width45 * 6,
-                        height: Dimensions.width45,
-                        decoration: BoxDecoration(
-                          gradient: AppColors.gradient,
-                          borderRadius: BorderRadius.circular(Dimensions.radius20)
-                        ),
-                        child: Center(
-                          child: SmallText(text: "Track pending order",
-                          color: Colors.white,),
+                      difference < 30? GestureDetector(
+                        onTap: () {
+                          Get.toNamed(RouteHelper.getTrackOrderPage(), arguments: model);
+                        },
+                        child: Container(
+                          width: Dimensions.width45 * 6,
+                          height: Dimensions.width45,
+                          decoration: BoxDecoration(
+                            gradient: AppColors.gradient,
+                            borderRadius: BorderRadius.circular(Dimensions.radius20)
+                          ),
+                          child: Center(
+                            child: SmallText(text: "Track pending order",
+                            color: Colors.white,),
+                          ),
                         ),
                       ):Container(
                         child: SmallText(text: "Order completed",

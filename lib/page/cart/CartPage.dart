@@ -11,7 +11,7 @@ import 'package:workspace/helper/RouteHelper.dart';
 import 'package:workspace/models/CartModel.dart';
 import 'package:workspace/models/Recommended.dart';
 import 'package:workspace/page/Tabbar/TabbarPage.dart';
-import 'package:workspace/page/food/RecommendedFoodDetailPage.dart';
+import 'package:workspace/page/food/FoodDetailPage.dart';
 
 import '../../Utils/AppConstants.dart';
 import '../../Utils/Dimensions.dart';
@@ -137,7 +137,7 @@ class CartPage extends StatelessWidget {
         width: double.maxFinite,
         child: GestureDetector(
           onTap: () {
-            RouteHelper.presentDetailPage(model.itemIndexInList!, model.itemType);
+            RouteHelper.presentDetailPage(model.itemIndexInList!, model.itemType, true);
           },
           child: Row(
             children: [
