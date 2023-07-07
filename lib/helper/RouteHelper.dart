@@ -31,7 +31,7 @@ class RouteHelper {
     GetPage(name: foodDetail, page: () {
       String str = Get.parameters['type']!;
       ItemType? itemType = ItemType.values.firstWhereOrNull((e) => "ItemType.${e.name}" == str);
-      return FoodDetailPage(index: int.parse(Get.parameters['index']!), itemType: itemType!);
+      return FoodDetailPage(index: int.parse(Get.parameters['index']!), itemType: itemType!, isPresented: false,);
     }),
     GetPage(name: cartPage, page: (){
       return CartPage();
@@ -47,7 +47,7 @@ class RouteHelper {
     }, transition: Transition.fadeIn),
   ];
 
-  static presentDetailPage(int index, ItemType type) {
-    Get.to(()=> FoodDetailPage(index: index, itemType: type), fullscreenDialog: true);
+  static presentDetailPage(int index, ItemType type, bool present) {
+    Get.to(()=> FoodDetailPage(index: index, itemType: type, isPresented: true,), fullscreenDialog: true);
   }
 }

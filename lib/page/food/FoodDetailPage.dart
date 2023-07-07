@@ -17,7 +17,8 @@ import '../../models/CartModel.dart';
 class FoodDetailPage extends StatelessWidget {
   final int index;
   final ItemType itemType;
-  const FoodDetailPage({Key? key, required this.index, required this.itemType})
+  final bool isPresented;
+  const FoodDetailPage({Key? key, required this.index, required this.itemType, required this.isPresented})
       : super(key: key);
 
   @override
@@ -59,7 +60,7 @@ class FoodDetailPage extends StatelessWidget {
                   controller.getTotalItem(model.id!) > 0
                       ? GestureDetector(
                           onTap: () {
-                            Get.toNamed(RouteHelper.getInitial(2));
+                            _goToCart();
                           },
                           child: Badge(
                               largeSize: 20,
@@ -78,11 +79,16 @@ class FoodDetailPage extends StatelessWidget {
                                     iconColor: AppColors.mainColor2,
                                   ))),
                         )
-                      : const AppIcon(
-                          icon: Icons.shopping_cart_outlined,
-                          backgroundColor: AppColors.titleColor,
-                          iconColor: Colors.white,
-                        )
+                      : GestureDetector(
+                        onTap: () {
+                          _goToCart();
+                          },
+                        child: const AppIcon(
+                            icon: Icons.shopping_cart_outlined,
+                            backgroundColor: AppColors.titleColor,
+                            iconColor: Colors.white,
+                          ),
+                      )
                 ],
               ),
               bottom: PreferredSize(
@@ -216,5 +222,13 @@ class FoodDetailPage extends StatelessWidget {
     Get.snackbar(title, msg,
         backgroundColor: AppColors.mainColor,
         duration: const Duration(seconds: 1));
+  }
+
+  _goToCart() {
+    if (isPresented) {
+      Get.back();
+      return;
+    }
+    Get.toNamed(RouteHelper.getInitial(2));
   }
 }

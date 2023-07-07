@@ -137,7 +137,7 @@ class CartPage extends StatelessWidget {
         width: double.maxFinite,
         child: GestureDetector(
           onTap: () {
-            RouteHelper.presentDetailPage(model.itemIndexInList!, model.itemType);
+            RouteHelper.presentDetailPage(model.itemIndexInList!, model.itemType, true);
           },
           child: Row(
             children: [
