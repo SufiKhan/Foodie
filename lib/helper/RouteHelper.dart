@@ -1,12 +1,10 @@
-
-import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:workspace/page/Orders/OrderHistory.dart';
 import 'package:workspace/page/Orders/TrackOrderPage.dart';
 import 'package:workspace/page/Splash/SplashScreen.dart';
 import 'package:workspace/page/Tabbar/TabbarPage.dart';
 import 'package:workspace/page/cart/CartPage.dart';
-import 'package:workspace/page/food/RecommendedFoodDetailPage.dart';
+import 'package:workspace/page/food/FoodDetailPage.dart';
 import '../models/CartModel.dart';
 
 class RouteHelper {
@@ -33,7 +31,7 @@ class RouteHelper {
     GetPage(name: foodDetail, page: () {
       String str = Get.parameters['type']!;
       ItemType? itemType = ItemType.values.firstWhereOrNull((e) => "ItemType.${e.name}" == str);
-      return RecommendedFoodDetailPage(index: int.parse(Get.parameters['index']!), itemType: itemType!);
+      return FoodDetailPage(index: int.parse(Get.parameters['index']!), itemType: itemType!);
     }),
     GetPage(name: cartPage, page: (){
       return CartPage();
@@ -50,6 +48,6 @@ class RouteHelper {
   ];
 
   static presentDetailPage(int index, ItemType type) {
-    Get.to(()=> RecommendedFoodDetailPage(index: index, itemType: type), fullscreenDialog: true);
+    Get.to(()=> FoodDetailPage(index: index, itemType: type), fullscreenDialog: true);
   }
 }

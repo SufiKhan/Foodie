@@ -14,10 +14,10 @@ import '../../Widgets/small_text.dart';
 import '../../controllers/CartController.dart';
 import '../../models/CartModel.dart';
 
-class RecommendedFoodDetailPage extends StatelessWidget {
+class FoodDetailPage extends StatelessWidget {
   final int index;
   final ItemType itemType;
-  const RecommendedFoodDetailPage({Key? key, required this.index, required this.itemType})
+  const FoodDetailPage({Key? key, required this.index, required this.itemType})
       : super(key: key);
 
   @override
