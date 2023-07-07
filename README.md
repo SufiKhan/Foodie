@@ -1,16 +1,23 @@
-# workspace
+Flutter sample project with a lot of potential.
 
-A new Flutter project.
+![final_foodie](https://github.com/SufiKhan/Foodie/assets/13538306/042aa574-1d36-42b1-a68f-ff59ab90f97c)
 
-## Getting Started
+## Major features
 
-This project is a starting point for a Flutter application.
+1. Show products based on category
+2. Shopping cart
+3. Place Order
+4. Track Order
+5. Order History
+6. User profile
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## About the code
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. A reactive approach using GetX library for State, dependency and route management.
+2. Build separate UI Components.
+3. Animations
+4. Rest API's
+5. Local cache
+6. Tabs
+
